@@ -1,0 +1,3 @@
+CREATE ROLE hozen LOGIN PASSWORD 'hozen#1qaz';
+CREATE DATABASE hozen encoding='UTF8';
+GRANT ALL ON DATABASE hozen TO hozen;

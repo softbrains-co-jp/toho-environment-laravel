@@ -1,0 +1,3 @@
+CREATE ROLE may LOGIN PASSWORD 'may#1qaz';
+CREATE DATABASE may encoding='UTF8';
+GRANT ALL ON DATABASE may TO may;

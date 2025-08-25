@@ -1,0 +1,24 @@
+services:
+  web:
+    build: ./docker/php
+    container_name: toho-laravel-web
+    ports:
+      - 80:80
+      - 5173:5173
+    volumes:
+      - ./docker/apache/custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini
+      - ./www:/var/www
+      - ./docker/apache/conf.d:/etc/apache2/conf.d
+
+  postgres:
+    image: postgres:12-alpine
+    container_name: toho-laravel-pgsql
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: secret
+      TZ: "Asia/Tokyo"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./docker/postgres/initdb.d:/docker-entrypoint-initdb.d
