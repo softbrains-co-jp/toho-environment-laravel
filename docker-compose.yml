@@ -4,11 +4,13 @@ services:
     container_name: toho-laravel-web
     ports:
       - 80:80
+      - 443:443
       - 5173:5173
     volumes:
       - ./docker/apache/custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini
-      - ./www:/var/www
+      - ./docker/apache/ssl:/etc/apache2/ssl
       - ./docker/apache/conf.d:/etc/apache2/conf.d
+      - ./www:/var/www
 
   postgres:
     image: postgres:12-alpine

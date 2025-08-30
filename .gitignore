@@ -1,2 +1,5 @@
 data/*
 www/*
+# SSL
+docker/apache/ssl/server.crt
+docker/apache/ssl/server.key

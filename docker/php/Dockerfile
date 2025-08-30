@@ -18,6 +18,9 @@ RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd    
 
+# Apache mod_ssl を有効にする
+RUN a2enmod ssl
+
 # Apache mod_rewrite を有効にする
 RUN a2enmod rewrite
 
