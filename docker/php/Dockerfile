@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     zip \
     libonig-dev \
-    && docker-php-ext-install intl pdo pdo_mysql mbstring zip
+    libpq-dev \
+    && docker-php-ext-install intl pdo pdo_mysql pdo_pgsql mbstring zip
 
 RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
