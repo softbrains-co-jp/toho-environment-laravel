@@ -11,6 +11,7 @@ services:
       - ./docker/apache/ssl:/etc/apache2/ssl
       - ./docker/apache/conf.d:/etc/apache2/conf.d
       - ./www:/var/www
+      - ./test_data:/test_data
 
   postgres:
     image: postgres:12-alpine
