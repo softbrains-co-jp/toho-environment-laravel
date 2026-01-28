@@ -2,5 +2,4 @@ data/*
 www/*
 test_data/*
 # SSL
-docker/apache/ssl/server.crt
-docker/apache/ssl/server.key
+docker/apache/ssl/*
